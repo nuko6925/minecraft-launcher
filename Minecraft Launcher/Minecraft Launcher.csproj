@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <RootNamespace>Minecraft_Launcher</RootNamespace>
+        <Nullable>enable</Nullable>
+        <UseWindowsForms>true</UseWindowsForms>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <ApplicationIcon>Minecraft.ico</ApplicationIcon>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <DebugType>none</DebugType>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="CmlLib.Core" Version="4.0.3" />
+      <PackageReference Include="CmlLib.Core.Auth.Microsoft" Version="3.2.0" />
+      <PackageReference Include="Microsoft-WindowsAPICodePack-Shell" Version="1.1.5" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Minecraft.ico" />
+      <EmbeddedResource Include="Minecraft.ico" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="ProfileEditor.cs">
+        <SubType>Form</SubType>
+      </Compile>
+    </ItemGroup>
+
+</Project>
